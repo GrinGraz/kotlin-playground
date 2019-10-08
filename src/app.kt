@@ -1,20 +1,22 @@
 import kotlin.math.PI
 import kotlin.math.pow
-import kotlin.system.measureTimeMillis
 
 fun main() {
-    val test = Test()
+    //val test = Test()
     //test.calcArea()
     //optionFun()
     //optionNone()
 
     //abstractFactoryOperations2()
 
-    val executionTime = measureTimeMillis {
-        curryOperations()
-    }
+//    val executionTime = measureTimeMillis {
+//        curryOperations()
+//    }
+//
+//    println(executionTime)
 
-    println(executionTime)
+    //println(dailyCodingProblem1(listOf(10, 15, 3, 7), -10))
+    //println(dailyCodingProblem2(mutableListOf(10, 15, 3, 7)))
 
     //val standardOrder = ChargeManagement.getChargeCalculator(Level.STANDARD)
 
@@ -24,6 +26,30 @@ fun main() {
 
     //val arr = IntArray(999) { i -> i + 1 }
     //createPopulatedIntArray(999).sumMultiplesOfFiveOrThree()
+
+    val airport = Airport()
+
+
+
+    println("Airplane ids = ")
+    airport.forEachAirplane { println(it.id) }
+
+    var totalSeats = 0
+    airport.forEachAirplane { totalSeats += it.maxCapacity }
+    println("Total seats = $totalSeats")
+
+    println("Current passenger = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + airplane.currentCapacity }}")
+
+    println("Available seats = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + (airplane.maxCapacity - airplane.currentCapacity) }}")
+
+    val id = 2
+
+    airport.forEachAirplane { if (id == it.id) println("Search airplane by id = $id: $it") }
+
+    airport.forEachAirplane { if (id == it.id) println(it.addPassenger(10)) }
+
+    airport.forEachAirplane { if (id == it.id) println(it.removePassenger(10)) }
+
 
     /*var count = 0
     IntArray(999) { i -> i + 1 }.forEach {
