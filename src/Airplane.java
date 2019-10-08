@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public final class Airplane {
     private int id;
@@ -14,11 +15,11 @@ public final class Airplane {
         this.state = state;
     }
 
-    public Airplane(int id, boolean state){
+    public Airplane(int id){
         this.id = id;
-        this.maxCapacity = 0;
-        this.currentCapacity = 0;
-        this.state = state;
+        this.maxCapacity = generateRandomIntIntRange(10, 20);
+        this.currentCapacity = generateRandomIntIntRange(1, 10);
+        this.state = new Random().nextBoolean();
     }
 
     public String removePassenger(int quantity){
@@ -39,6 +40,10 @@ public final class Airplane {
         currentCapacity = currentCapacity + quantity;
 
         return "Added " + quantity + " passengers, " + currentCapacity + " passengers are";
+    }
+
+    private int generateRandomIntIntRange(int min, int max) {
+        return new Random().nextInt((max - min) + 1) + min;
     }
 
     public int getId() {
