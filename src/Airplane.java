@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.Contract;
+
 import java.util.Random;
 
 public final class Airplane {
@@ -6,6 +8,7 @@ public final class Airplane {
     private int currentCapacity;
     private boolean state;
 
+    @Contract(pure = true)
     public Airplane(){}
 
     public Airplane(int id, int maxCapacity, int currentCapacity, boolean state) {

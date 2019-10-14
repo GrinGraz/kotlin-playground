@@ -27,29 +27,48 @@ fun main() {
     //val arr = IntArray(999) { i -> i + 1 }
     //createPopulatedIntArray(999).sumMultiplesOfFiveOrThree()
 
-    val airport = Airport()
+//    val airport = Airport()
+//
+//
+//
+//    println("Airplane ids = ")
+//    airport.forEachAirplane { println(it.id) }
+//
+//    var totalSeats = 0
+//    airport.forEachAirplane { totalSeats += it.maxCapacity }
+//    println("Total seats = $totalSeats")
+//
+//    println("Current passenger = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + airplane.currentCapacity }}")
+//
+//    println("Available seats = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + (airplane.maxCapacity - airplane.currentCapacity) }}")
+//
+//    val id = 2
+//
+//    airport.forEachAirplane { if (id == it.id) println("Search airplane by id = $id: $it") }
+//
+//    airport.forEachAirplane { if (id == it.id) println(it.addPassenger(10)) }
+//
+//    airport.forEachAirplane { if (id == it.id) println(it.removePassenger(10)) }
 
+    //checkScores()
 
+    val airpo = Airpo()
 
-    println("Airplane ids = ")
-    airport.forEachAirplane { println(it.id) }
+    println(airpo.name)
 
-    var totalSeats = 0
-    airport.forEachAirplane { totalSeats += it.maxCapacity }
-    println("Total seats = $totalSeats")
+    airpo.forEachAirplane { println("Current capacity = ${it.currentCapacity}") }
 
-    println("Current passenger = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + airplane.currentCapacity }}")
+    airpo.forEachAirplane { println("Max capacity = ${it.maxCapacity}") }
 
-    println("Available seats = ${airport.airplanes.fold(0) { acc: Int, airplane: Airplane -> acc + (airplane.maxCapacity - airplane.currentCapacity) }}")
+    airpo.forEachAirplane { println("Id = ${it.id}") }
 
-    val id = 2
+    airpo.forEachAirplane { println("Available seats = ${it.availableSeats}") }
 
-    airport.forEachAirplane { if (id == it.id) println("Search airplane by id = $id: $it") }
+    println(airpo.getAirplaneById(1)?.addPassenger(3))
 
-    airport.forEachAirplane { if (id == it.id) println(it.addPassenger(10)) }
+    println(airpo.getAirplaneById(2)?.removePassenger(5))
 
-    airport.forEachAirplane { if (id == it.id) println(it.removePassenger(10)) }
-
+    println(airpo.getAirplaneById(0).toString())
 
     /*var count = 0
     IntArray(999) { i -> i + 1 }.forEach {
