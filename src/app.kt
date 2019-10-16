@@ -51,24 +51,7 @@ fun main() {
 //    airport.forEachAirplane { if (id == it.id) println(it.removePassenger(10)) }
 
     //checkScores()
-
-    val airpo = Airpo()
-
-    println(airpo.name)
-
-    airpo.forEachAirplane { println("Current capacity = ${it.currentCapacity}") }
-
-    airpo.forEachAirplane { println("Max capacity = ${it.maxCapacity}") }
-
-    airpo.forEachAirplane { println("Id = ${it.id}") }
-
-    airpo.forEachAirplane { println("Available seats = ${it.availableSeats}") }
-
-    println(airpo.getAirplaneById(1)?.addPassenger(3))
-
-    println(airpo.getAirplaneById(2)?.removePassenger(5))
-
-    println(airpo.getAirplaneById(0).toString())
+    runAirportConsole()
 
     /*var count = 0
     IntArray(999) { i -> i + 1 }.forEach {
