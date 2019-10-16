@@ -1,3 +1,5 @@
+import airport.Airplane
+import airport.runAirportConsole
 import kotlin.math.PI
 import kotlin.math.pow
 
@@ -46,9 +48,9 @@ fun main() {
 //
 //    airport.forEachAirplane { if (id == it.id) println("Search airplane by id = $id: $it") }
 //
-//    airport.forEachAirplane { if (id == it.id) println(it.addPassenger(10)) }
+//    airport.forEachAirplane { if (id == it.id) println(it.airport.addPassenger(10)) }
 //
-//    airport.forEachAirplane { if (id == it.id) println(it.removePassenger(10)) }
+//    airport.forEachAirplane { if (id == it.id) println(it.airport.removePassenger(10)) }
 
     //checkScores()
     runAirportConsole()
